@@ -1,26 +1,317 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0c0d0b;
+  --foreground: #f6f1e7;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-outfit);
+  --font-display: var(--font-cormorant);
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(ellipse at 15% 0%, rgba(62, 84, 68, 0.28), transparent 42%),
+    radial-gradient(ellipse at 100% 18%, rgba(36, 52, 42, 0.22), transparent 36%),
+    var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.glow-a {
+  top: -6%;
+  left: -32%;
+  width: 78%;
+  height: 42%;
+  background: radial-gradient(
+    circle,
+    rgba(104, 148, 114, 0.22),
+    transparent 68%
+  );
+}
+
+.glow-b {
+  top: 46%;
+  right: -36%;
+  width: 72%;
+  height: 38%;
+  background: radial-gradient(
+    circle,
+    rgba(72, 112, 84, 0.2),
+    transparent 70%
+  );
+}
+
+.mote {
+  position: absolute;
+  z-index: 1;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.mote-ivory {
+  color: rgba(246, 241, 231, 0.42);
+}
+
+.mote-green {
+  color: rgba(176, 206, 176, 0.38);
+}
+
+.leaf-1 {
+  transform: rotate(-3deg);
+  transform-origin: 72% 82%;
+}
+
+.leaf-2 {
+  transform: rotate(12deg);
+  transform-origin: 18% 84%;
+}
+
+.leaf-3 {
+  transform: rotate(-12deg);
+  transform-origin: 80% 86%;
+}
+
+.ink-glow {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+@media (hover: hover) {
+  .ink-glow:hover {
+    border-color: rgba(168, 198, 172, 0.45);
+    background-color: rgba(92, 128, 102, 0.18);
+    box-shadow: 0 8px 26px rgba(62, 110, 78, 0.2);
+  }
+
+  .ink-glow-solid:hover {
+    border-color: transparent;
+    background-color: #1ebe5d;
+    box-shadow: 0 12px 32px rgba(37, 211, 102, 0.42);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .ink-glow:hover,
+  .ink-glow:focus-visible {
+    transform: scale(1.03);
+  }
+}
+
+.petal-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  top: -12%;
+  opacity: 0.42;
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.petal-sway {
+  display: block;
+  animation-name: petal-sway;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-field {
+    display: none;
+  }
+}
+
+.ink-glow:active {
+  background-color: rgba(92, 128, 102, 0.22);
+}
+
+.ink-glow-solid:active {
+  background-color: #1ebe5d;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .glow-a,
+  .glow-b {
+    animation: glow-drift 32s ease-in-out infinite alternate;
+  }
+
+  .glow-b {
+    animation-duration: 40s;
+    animation-delay: -8s;
+  }
+
+  .mote-a,
+  .mote-b {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  .mote-a {
+    animation-name: mote-a;
+  }
+
+  .mote-b {
+    animation-name: mote-b;
+  }
+
+  .leaf-1,
+  .leaf-2,
+  .leaf-3 {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+
+  .leaf-1 {
+    animation-name: sway-1;
+    animation-duration: 22s;
+  }
+
+  .leaf-2 {
+    animation-name: sway-2;
+    animation-duration: 26s;
+  }
+
+  .leaf-3 {
+    animation-name: sway-3;
+    animation-duration: 24s;
+  }
+
+  .enter {
+    animation: rise-in 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .enter-view {
+    animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .ink-glow:active {
+    transform: scale(0.985);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .enter-view {
+      animation-duration: auto;
+      animation-timing-function: linear;
+      animation-timeline: view();
+      animation-range: entry 0% entry 42%;
+    }
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes glow-drift {
+  from {
+    opacity: 0.72;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(16px, 22px, 0) scale(1.06);
+  }
+}
+
+@keyframes mote-a {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(7px, -20px, 0);
+  }
+}
+
+@keyframes mote-b {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-8px, -14px, 0);
+  }
+}
+
+@keyframes sway-1 {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes sway-2 {
+  0%,
+  100% {
+    transform: rotate(9deg);
+  }
+
+  50% {
+    transform: rotate(16deg);
+  }
+}
+
+@keyframes petal-fall {
+  from {
+    transform: translate3d(0, -12vh, 0);
+  }
+
+  to {
+    transform: translate3d(0, 112vh, 0);
+  }
+}
+
+@keyframes petal-sway {
+  from {
+    transform: translate3d(-16px, 0, 0) rotate(-18deg);
+  }
+
+  to {
+    transform: translate3d(18px, 0, 0) rotate(22deg);
+  }
+}
+
+@keyframes sway-3 {
+  0%,
+  100% {
+    transform: rotate(-15deg);
+  }
+
+  50% {
+    transform: rotate(-8deg);
+  }
 }
