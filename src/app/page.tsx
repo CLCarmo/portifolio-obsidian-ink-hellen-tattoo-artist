@@ -1,5 +1,5 @@
-import { LinkBio } from "@/components/link-bio/link-bio";
+import { DesktopSite } from "@/components/desktop/desktop-site";
 
 export default function Home() {
-  return <LinkBio />;
+  return <DesktopSite />;
 }

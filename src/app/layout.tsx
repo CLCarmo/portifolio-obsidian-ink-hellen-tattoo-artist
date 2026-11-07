@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const sans = Outfit({
+const sans = Manrope({
   variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const display = Cormorant_Garamond({
+const display = Playfair_Display({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   title: "Obsidian Ink",
   description:
-    "Hellen, tatuadora em Belém. Arte na pele, histórias para sempre.",
+    "Hellen, tatuagem autoral em Belém. Arte na pele, histórias para sempre. Atendimento em domicílio.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
