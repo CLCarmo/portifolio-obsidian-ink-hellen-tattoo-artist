@@ -54,6 +54,7 @@ function GalleryCard({
             src={image}
             alt={label}
             fill
+            sizes="(min-width: 430px) 190px, 45vw"
             unoptimized={logo}
             className={logo ? "object-contain" : "object-cover"}
           />

@@ -33,12 +33,18 @@ const safety = [
 export function DesktopSite() {
   return (
     <div className="relative min-h-dvh bg-[#121413] text-[#e2e3e0]">
+      <a
+        href="#conteudo"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-[#e5dfd5] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[#33302a]"
+      >
+        Pular para o conteúdo
+      </a>
       <Petals />
       <SiteHeader />
-      <main className="relative z-10 pt-20">
+      <main id="conteudo" className="relative z-10 pt-20">
         <section id="inicio" className="mx-auto flex max-w-7xl flex-col items-center gap-14 px-5 py-16 lg:flex-row lg:px-10 lg:py-28">
           <div className="w-full lg:w-7/12">
-            <h1 className="font-display text-5xl leading-tight text-[#fffbff] lg:text-6xl">
+            <h1 className="font-display text-4xl leading-tight text-[#fffbff] sm:text-5xl lg:text-6xl">
               Arte na pele,{" "}
               <span className="italic text-[#cbc6bc]">histórias para sempre.</span>
             </h1>
@@ -65,13 +71,13 @@ export function DesktopSite() {
                 <p className="font-display text-2xl leading-snug text-[#fffbff]">
                   Preço Especial para
                 </p>
-                <p className="text-[10px] tracking-[0.18em] text-[#cbc6bc] uppercase">
+                <p className="text-xs tracking-[0.18em] text-[#cbc6bc] uppercase">
                   Portifolio
                 </p>
               </div>
               <div>
                 <p className="font-display text-2xl text-[#fffbff]">Hellen</p>
-                <p className="text-[10px] tracking-[0.18em] text-[#cbc6bc] uppercase">
+                <p className="text-xs tracking-[0.18em] text-[#cbc6bc] uppercase">
                   Artista
                 </p>
               </div>
@@ -79,7 +85,7 @@ export function DesktopSite() {
                 <p className="font-display text-2xl leading-snug text-[#fffbff]">
                   Atendimento em Domicílio
                 </p>
-                <p className="text-[10px] tracking-[0.18em] text-[#cbc6bc] uppercase">
+                <p className="text-xs tracking-[0.18em] text-[#cbc6bc] uppercase">
                   Em Belém
                 </p>
               </div>
@@ -94,6 +100,7 @@ export function DesktopSite() {
                   alt="Logo da Obsidian Ink"
                   fill
                   priority
+                  sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-contain bg-[#f5f5f5] p-8"
                 />
               </div>
@@ -115,7 +122,7 @@ export function DesktopSite() {
             {[0, 1].map((copy) => (
               <div
                 key={copy}
-                className="flex shrink-0 gap-10 pr-10 text-[11px] tracking-[0.2em] text-[#cbc6bc] uppercase"
+                className="flex shrink-0 gap-10 pr-10 text-xs tracking-[0.2em] text-[#cbc6bc] uppercase"
                 aria-hidden={copy === 1}
               >
                 {ticker.map((item) => (
@@ -134,10 +141,10 @@ export function DesktopSite() {
         <section id="biosseguranca" className="bg-[#1a1c1b] px-5 py-20 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-[11px] tracking-[0.22em] text-[#b7ccbc] uppercase">
+              <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
                 Segurança em cada detalhe
               </p>
-              <h2 className="font-display mt-2 text-4xl text-[#fffbff]">
+              <h2 className="font-display mt-2 text-3xl text-[#fffbff] sm:text-4xl">
                 Biossegurança e cuidado em cada sessão
               </h2>
               <p className="mt-3 text-sm leading-7 text-[#cbc6bc]">
@@ -159,10 +166,10 @@ export function DesktopSite() {
         </section>
 
         <section id="depoimentos" className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
-          <p className="text-[11px] tracking-[0.22em] text-[#b7ccbc] uppercase">
+          <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
             Reconhecimento
           </p>
-          <h2 className="font-display mt-2 text-4xl text-[#fffbff]">A voz de quem confia</h2>
+          <h2 className="font-display mt-2 text-3xl text-[#fffbff] sm:text-4xl">A voz de quem confia</h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {[
               "A mão da Hellen é leve. O traço ficou fino, do jeito que eu imaginei.",
@@ -179,10 +186,10 @@ export function DesktopSite() {
         <section id="orcamento" className="bg-[#0d0f0e] px-5 py-20 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
             <div className="rounded-3xl bg-[#1e201f] p-8 lg:col-span-7 lg:p-12">
-              <p className="text-[11px] tracking-[0.22em] text-[#b7ccbc] uppercase">
+              <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
                 Reserva e criação
               </p>
-              <h2 className="font-display mt-2 text-4xl text-[#fffbff]">
+              <h2 className="font-display mt-2 text-3xl text-[#fffbff] sm:text-4xl">
                 Solicite seu orçamento exclusivo
               </h2>
               <p className="mt-3 mb-8 text-sm text-[#cbc6bc]">
@@ -204,6 +211,7 @@ export function DesktopSite() {
                   className="mt-6 flex items-center justify-center rounded-full bg-[#3b4d42] py-3 text-sm text-[#d3e8d8]"
                 >
                   Conversar no WhatsApp
+                  <span className="sr-only"> (abre em nova aba)</span>
                 </a>
                 <a
                   href={site.links.instagram.href}
@@ -212,6 +220,7 @@ export function DesktopSite() {
                   className="mt-3 flex items-center justify-center rounded-full border border-[#e5dfd5]/15 py-3 text-sm"
                 >
                   Falar no Instagram • @elli_crisx
+                  <span className="sr-only"> (abre em nova aba)</span>
                 </a>
               </div>
             </aside>
@@ -219,7 +228,7 @@ export function DesktopSite() {
         </section>
       </main>
 
-      <footer className="relative z-10 bg-[#0d0f0e] px-5 py-14 lg:px-10">
+      <footer className="relative z-10 bg-[#0d0f0e] px-5 pt-14 pb-24 lg:px-10 lg:pb-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:justify-between">
           <div>
             <p className="font-display text-2xl text-[#fffbff]">{site.name}</p>
@@ -229,14 +238,34 @@ export function DesktopSite() {
           </div>
           <p className="text-sm text-[#cbc6bc]">© 2026 Obsidian Ink. Belém, PA.</p>
         </div>
+        <div className="mx-auto mt-10 max-w-7xl border-t border-[#e5dfd5]/10 pt-8">
+          <a
+            href="https://www.optosite.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-auto flex w-fit items-center gap-2.5 text-xs tracking-[0.14em] text-[#cbc6bc] uppercase hover:text-[#fffbff]"
+          >
+            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-[#f4f1ea]">
+              <Image
+                src="/brand/opto-azul.png"
+                alt=""
+                width={28}
+                height={28}
+                className="size-7 rounded-md"
+              />
+            </span>
+            Opto Site
+            <span className="sr-only"> (abre em nova aba)</span>
+          </a>
+        </div>
       </footer>
 
       <a
         href={site.links.whatsapp.href}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Falar no WhatsApp"
-        className="fixed right-6 bottom-6 z-50 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)]"
+        aria-label="Falar no WhatsApp (abre em nova aba)"
+        className="fixed right-6 bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-40 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)]"
       >
         <WhatsAppIcon className="size-7" />
       </a>

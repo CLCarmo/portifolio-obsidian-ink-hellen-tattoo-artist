@@ -35,7 +35,7 @@ export function QuoteForm() {
           name="name"
           required
           placeholder="Como podemos te chamar"
-          className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-sm outline-none"
+          className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-base sm:text-sm"
         />
       </label>
       <div className="grid gap-4 sm:grid-cols-2">
@@ -44,7 +44,7 @@ export function QuoteForm() {
           <input
             name="placement"
             placeholder="Antebraço, costela..."
-            className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-sm outline-none"
+            className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-base sm:text-sm"
           />
         </label>
         <label className="block text-[13px]">
@@ -52,7 +52,7 @@ export function QuoteForm() {
           <select
             name="size"
             defaultValue="Média (entre 7 e 14 cm)"
-            className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-sm outline-none"
+            className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-base sm:text-sm"
           >
             <option>Pequena (até 6 cm)</option>
             <option>Média (entre 7 e 14 cm)</option>
@@ -67,7 +67,7 @@ export function QuoteForm() {
           name="idea"
           rows={4}
           placeholder="Símbolos, flores, referências..."
-          className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-sm outline-none"
+          className="mt-1 w-full rounded-xl bg-[#282a29] px-4 py-3 text-base sm:text-sm"
         />
       </label>
       <button
@@ -77,7 +77,7 @@ export function QuoteForm() {
         Enviar ideia e receber estimativa
       </button>
       {sent ? (
-        <p className="rounded-xl bg-[#3b4d42] px-4 py-3 text-center text-sm text-[#d3e8d8]">
+        <p role="status" className="rounded-xl bg-[#3b4d42] px-4 py-3 text-center text-sm text-[#d3e8d8]">
           O WhatsApp foi aberto com o seu pedido.
         </p>
       ) : null}

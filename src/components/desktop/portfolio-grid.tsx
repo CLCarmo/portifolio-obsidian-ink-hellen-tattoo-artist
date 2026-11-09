@@ -55,10 +55,10 @@ export function PortfolioGrid() {
     <section id="portfolio" className="mx-auto w-full max-w-7xl px-5 py-20 lg:px-10">
       <div className="mb-8 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
-          <p className="text-[11px] tracking-[0.22em] text-[#b7ccbc] uppercase">
+          <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
             Galeria de tatuagens
           </p>
-          <h2 className="font-display mt-2 text-4xl text-[#fffbff]">Trabalhos em destaque</h2>
+          <h2 className="font-display mt-2 text-3xl text-[#fffbff] sm:text-4xl">Trabalhos em destaque</h2>
           <p className="mt-2 max-w-xl text-sm text-[#cbc6bc]">
             Uma seleção de tatuagens realizadas. As imagens são
             importadas diretamente do Instagram, trazendo registros reais dos
@@ -70,8 +70,9 @@ export function PortfolioGrid() {
             <button
               key={item.id}
               type="button"
+              aria-pressed={filter === item.id}
               onClick={() => setFilter(item.id)}
-              className={`rounded-full px-4 py-2 text-[13px] ${
+              className={`min-h-11 rounded-full px-4 py-2 text-[13px] ${
                 filter === item.id
                   ? "bg-[#e5dfd5] text-[#33302a]"
                   : "bg-[#282a29] text-[#e2e3e0]"
@@ -87,16 +88,22 @@ export function PortfolioGrid() {
         {visible.map((work) => (
           <figure
             key={work.title}
-            className="group relative overflow-hidden rounded-2xl bg-[#1a1c1b]"
+            className="relative overflow-hidden rounded-2xl bg-[#1a1c1b]"
           >
             <div className="relative aspect-[3/4]">
               {work.image ? (
-                <Image src={work.image} alt={work.title} fill className="object-contain bg-[#f5f5f5]" />
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                  className="object-contain bg-[#f5f5f5]"
+                />
               ) : work.art ? (
                 <GalleryArt id={work.art} />
               ) : null}
             </div>
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d0f0e] to-transparent p-4 opacity-0 transition group-hover:opacity-100">
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d0f0e] via-[#0d0f0e]/80 to-transparent p-4">
               <span className="font-display block text-lg text-[#fffbff]">{work.title}</span>
               <span className="text-xs text-[#b7ccbc]">{work.detail}</span>
             </figcaption>

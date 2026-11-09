@@ -11,7 +11,7 @@ const stroke = {
 
 function Flores() {
   return (
-    <svg viewBox="0 0 160 200" className="h-full w-full text-[#e7e1d4]">
+    <svg viewBox="0 0 160 200" aria-hidden="true" className="h-full w-full text-[#e7e1d4]">
       <path {...stroke} d="M80 176V92" />
       <path {...stroke} d="M80 130c-18 6-28 2-34-10" />
       <path {...stroke} d="M80 148c16 4 26-2 32-14" />
@@ -29,7 +29,7 @@ function Flores() {
 
 function Borboleta() {
   return (
-    <svg viewBox="0 0 160 200" className="h-full w-full text-[#e7e1d4]">
+    <svg viewBox="0 0 160 200" aria-hidden="true" className="h-full w-full text-[#e7e1d4]">
       <path {...stroke} d="M80 46v108" />
       <path {...stroke} d="M80 78c-28-24-48-18-52 6 18 8 36 6 52 8" />
       <path {...stroke} d="M80 78c28-24 48-18 52 6-18 8-36 6-52 8" />
@@ -44,7 +44,7 @@ function Borboleta() {
 
 function Serpente() {
   return (
-    <svg viewBox="0 0 160 200" className="h-full w-full text-[#e7e1d4]">
+    <svg viewBox="0 0 160 200" aria-hidden="true" className="h-full w-full text-[#e7e1d4]">
       <path
         {...stroke}
         d="M108 42c-10 8-8 20 2 26 14 8 10 24-6 30-18 6-22 22-8 32 16 12 8 28-10 34-20 6-18 24 2 30"

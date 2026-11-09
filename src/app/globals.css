@@ -12,6 +12,11 @@
   --font-display: var(--font-cormorant);
 }
 
+:focus-visible {
+  outline: 2px solid #f6f1e7;
+  outline-offset: 3px;
+}
+
 body {
   background:
     radial-gradient(ellipse at 15% 0%, rgba(62, 84, 68, 0.28), transparent 42%),
