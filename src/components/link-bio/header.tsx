@@ -46,9 +46,24 @@ export function Header() {
         </p>
       </div>
 
+      <nav aria-label="Atalhos" className="hidden items-center gap-2 md:flex">
+        {menuLinks.map((link) => (
+          <a
+            key={link.label}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            className="ink-glow grid size-11 place-items-center rounded-full border border-white/15 bg-white/[0.04] text-[#f6f1e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6f1e7]"
+          >
+            <link.icon className="size-4" />
+          </a>
+        ))}
+      </nav>
+
       <button
         type="button"
-        className="ink-glow grid size-11 place-items-center rounded-full border border-white/15 bg-white/5 text-[#f6f1e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6f1e7]"
+        className="ink-glow grid size-11 place-items-center rounded-full border border-white/15 bg-white/5 text-[#f6f1e7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6f1e7] md:hidden"
         aria-expanded={open}
         aria-controls="menu-bio"
         onClick={() => setOpen((value) => !value)}

@@ -14,8 +14,8 @@ import { Petals } from "./petals";
 
 function Portrait() {
   return (
-    <div className="enter mx-auto mt-8 w-[15.5rem]" style={{ animationDelay: "70ms" }}>
-      <div className="relative mx-auto aspect-[4/5] w-[13.25rem] overflow-hidden rounded-t-[999px] rounded-b-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_50%_28%,#3a3834,#171816_68%)] shadow-[0_24px_50px_rgba(0,0,0,0.35)]">
+    <div className="enter mx-auto mt-8 w-[15.5rem] lg:mt-2 lg:w-full lg:max-w-[20rem]" style={{ animationDelay: "70ms" }}>
+      <div className="relative mx-auto aspect-[4/5] w-[13.25rem] overflow-hidden rounded-t-[999px] rounded-b-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_50%_28%,#3a3834,#171816_68%)] shadow-[0_24px_50px_rgba(0,0,0,0.35)] lg:w-[17rem]">
         <div className="flex h-full flex-col items-center justify-end px-6 pb-8 text-center">
           <p className="font-display text-6xl leading-none font-medium italic text-[#f6f1e7]">
             {site.artist.slice(0, 1)}
@@ -54,7 +54,7 @@ function GalleryCard({
             src={image}
             alt={label}
             fill
-            sizes="(min-width: 430px) 190px, 45vw"
+            sizes="(min-width: 1024px) 280px, (min-width: 768px) 320px, 45vw"
             unoptimized={logo}
             className={logo ? "object-contain" : "object-cover"}
           />
@@ -68,15 +68,19 @@ function GalleryCard({
 
 export function LinkBio() {
   return (
-    <div className="relative mx-auto min-h-dvh w-full max-w-[430px] px-5 pt-6 pb-24">
+    <div className="relative min-h-dvh">
       <Petals />
-      <Atmosphere />
-      <Leaves />
-      <div className="relative z-10">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <Atmosphere />
+        <Leaves />
+      </div>
+      <div className="relative z-10 mx-auto w-full max-w-[430px] px-5 pt-6 pb-28 md:max-w-3xl md:px-8 md:pt-8 lg:max-w-6xl lg:px-12 lg:pt-10 lg:pb-16">
         <Header />
+        <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-16 lg:pt-8">
+        <div className="lg:col-span-5">
         <Portrait />
 
-        <div className="enter mt-7 text-center" style={{ animationDelay: "150ms" }}>
+        <div className="enter mt-7 text-center lg:mt-8" style={{ animationDelay: "150ms" }}>
           <h1 className="font-display text-[3.15rem] leading-[0.9] font-medium tracking-tight text-[#f7f3ea] italic">
             {site.name}
           </h1>
@@ -122,9 +126,28 @@ export function LinkBio() {
           </a>
         </div>
 
+        {site.offer.visible ? (
+          <p
+            role="note"
+            className="enter-view mt-4 flex items-start gap-3 rounded-[1.6rem] border border-white/12 bg-[#1a2420]/80 px-4 py-3"
+          >
+            <TagIcon className="mt-0.5 size-5 shrink-0 text-[#d7d1c4]" />
+            <span>
+              <span className="block text-[0.78rem] leading-tight text-[#f6f1e7]">
+                {site.offer.title}
+              </span>
+              <span className="mt-0.5 block text-[0.68rem] leading-snug text-[#b7b1a4]">
+                {site.offer.detail}
+              </span>
+            </span>
+          </p>
+        ) : null}
+        </div>
+
+        <div className="lg:col-span-7">
         <section
           aria-label="Prévia ilustrada do portfólio. As fotos reais entram depois."
-          className="mt-4 grid grid-cols-2 gap-3"
+          className="mt-4 grid grid-cols-2 gap-3 md:gap-4 lg:mt-0"
         >
           {site.gallery.map((item) => (
             <GalleryCard key={item.id} {...item} />
@@ -144,25 +167,10 @@ export function LinkBio() {
             <ArrowIcon className="size-5" />
           </span>
         </section>
+        </div>
+        </div>
 
-        {site.offer.visible ? (
-          <p
-            role="note"
-            className="enter-view mt-4 flex items-start gap-3 rounded-[1.6rem] border border-white/12 bg-[#1a2420]/80 px-4 py-3"
-          >
-            <TagIcon className="mt-0.5 size-5 shrink-0 text-[#d7d1c4]" />
-            <span>
-              <span className="block text-[0.78rem] leading-tight text-[#f6f1e7]">
-                {site.offer.title}
-              </span>
-              <span className="mt-0.5 block text-[0.68rem] leading-snug text-[#b7b1a4]">
-                {site.offer.detail}
-              </span>
-            </span>
-          </p>
-        ) : null}
-
-        <footer className="enter-view mt-8 flex flex-col items-center gap-3 text-[#f6f1e7]">
+        <footer className="enter-view mt-10 flex flex-col items-center gap-4 border-t border-white/10 pt-8 text-[#f6f1e7] lg:mt-16">
           <div className="flex items-center gap-5">
             <a
               href={site.links.instagram.href}
@@ -189,6 +197,24 @@ export function LinkBio() {
           <p className="text-xs tracking-wide text-[#cfc8ba]">
             {site.locationShort}
           </p>
+          <a
+            href="https://www.optosite.com.br/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-2 flex items-center gap-2.5 text-xs tracking-[0.14em] text-[#cbc6bc] uppercase hover:text-[#fffbff]"
+          >
+            <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-[#f4f1ea]">
+              <Image
+                src="/brand/opto-azul.png"
+                alt=""
+                width={28}
+                height={28}
+                className="size-7 rounded-md"
+              />
+            </span>
+            Opto Site
+            <span className="sr-only"> (abre em nova aba)</span>
+          </a>
         </footer>
       </div>
 
@@ -197,7 +223,7 @@ export function LinkBio() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Abrir WhatsApp"
-        className="ink-glow ink-glow-solid enter fixed right-[max(1.25rem,calc(50%-195px))] bottom-5 z-30 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6f1e7]"
+        className="ink-glow ink-glow-solid enter fixed right-5 bottom-5 z-30 grid size-14 place-items-center rounded-full bg-[#25D366] text-white shadow-[0_10px_30px_rgba(37,211,102,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f6f1e7] md:right-8 md:bottom-8"
         style={{ animationDelay: "360ms" }}
       >
         <WhatsAppIcon className="size-7" />
