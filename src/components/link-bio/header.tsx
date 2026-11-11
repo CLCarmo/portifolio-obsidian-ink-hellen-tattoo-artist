@@ -80,7 +80,7 @@ export function Header() {
         <div className="absolute inset-x-0 top-16" id="menu-bio">
           <nav
             aria-label="Atalhos"
-            className="rounded-[28px] border border-white/12 bg-[#141513]/95 p-3 shadow-2xl backdrop-blur"
+            className="rounded-[28px] border border-white/12 bg-[#0c0c0c]/95 p-3 shadow-2xl backdrop-blur"
           >
             <ul className="flex flex-col gap-1">
               {menuLinks.map((link) => (

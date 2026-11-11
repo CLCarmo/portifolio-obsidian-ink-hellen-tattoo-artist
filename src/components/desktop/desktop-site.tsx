@@ -32,7 +32,7 @@ const safety = [
 
 export function DesktopSite() {
   return (
-    <div className="relative min-h-dvh bg-[#121413] text-[#e2e3e0]">
+    <div className="relative min-h-dvh bg-[#050505] text-[#e2e3e0]">
       <a
         href="#conteudo"
         className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[60] focus:rounded-full focus:bg-[#e5dfd5] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-[#33302a]"
@@ -61,7 +61,7 @@ export function DesktopSite() {
               </a>
               <a
                 href="#portfolio"
-                className="rounded-full bg-[#282a29] px-6 py-3.5 text-sm text-[#e2e3e0]"
+                className="rounded-full bg-[#181818] px-6 py-3.5 text-sm text-[#e2e3e0]"
               >
                 Explorar portfólio
               </a>
@@ -93,7 +93,7 @@ export function DesktopSite() {
           </div>
 
           <div className="relative w-full max-w-md lg:w-5/12">
-            <div className="overflow-hidden rounded-t-[14rem] rounded-b-3xl border border-[#e5dfd5]/15 bg-[#1a1c1b] shadow-2xl">
+            <div className="overflow-hidden rounded-t-[14rem] rounded-b-3xl border border-[#e5dfd5]/15 bg-[#0c0c0c] shadow-2xl">
               <div className="relative aspect-[3/4.2]">
                 <Image
                   src="/brand/obsidian-ink-v3.png"
@@ -104,12 +104,12 @@ export function DesktopSite() {
                   className="object-contain bg-[#f5f5f5] p-8"
                 />
               </div>
-              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl bg-[#282a29]/90 px-4 py-3 backdrop-blur">
+              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between rounded-2xl bg-[#181818]/90 px-4 py-3 backdrop-blur">
                 <div>
                   <p className="text-sm text-[#fffbff]">Hellen • Obsidian Ink</p>
                   <p className="text-xs text-[#b7ccbc]">Fineline e Old School</p>
                 </div>
-                <span className="rounded-full bg-[#0d0f0e] px-2.5 py-1 text-xs text-[#e5dfd5]">
+                <span className="rounded-full bg-black px-2.5 py-1 text-xs text-[#e5dfd5]">
                   Belém
                 </span>
               </div>
@@ -117,7 +117,7 @@ export function DesktopSite() {
           </div>
         </section>
 
-        <div className="overflow-hidden bg-[#0d0f0e] py-4">
+        <div className="overflow-hidden bg-black py-4">
           <div className="ticker-track flex w-max">
             {[0, 1].map((copy) => (
               <div
@@ -138,7 +138,7 @@ export function DesktopSite() {
         <CarePanel />
         <PortfolioGrid />
 
-        <section id="biosseguranca" className="bg-[#1a1c1b] px-5 py-20 lg:px-10">
+        <section id="biosseguranca" className="bg-[#0c0c0c] px-5 py-20 lg:px-10">
           <div className="mx-auto max-w-7xl">
             <div className="mx-auto max-w-2xl text-center">
               <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
@@ -156,7 +156,7 @@ export function DesktopSite() {
             </div>
             <div className="mt-10 grid gap-5 md:grid-cols-3">
               {safety.map((item) => (
-                <article key={item.title} className="rounded-2xl bg-[#1e201f] p-6">
+                <article key={item.title} className="rounded-2xl bg-[#121212] p-6">
                   <h3 className="font-display text-2xl text-[#fffbff]">{item.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-[#cbc6bc]">{item.text}</p>
                 </article>
@@ -165,9 +165,9 @@ export function DesktopSite() {
           </div>
         </section>
 
-        <section id="orcamento" className="bg-[#0d0f0e] px-5 py-20 lg:px-10">
+        <section id="orcamento" className="bg-black px-5 py-20 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
-            <div className="rounded-3xl bg-[#1e201f] p-8 lg:col-span-7 lg:p-12">
+            <div className="rounded-3xl bg-[#121212] p-8 lg:col-span-7 lg:p-12">
               <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
                 Reserva e criação
               </p>
@@ -180,7 +180,7 @@ export function DesktopSite() {
               <QuoteForm />
             </div>
             <aside className="flex flex-col gap-6 lg:col-span-5">
-              <div className="rounded-3xl bg-[#1e201f] p-8">
+              <div className="rounded-3xl bg-[#121212] p-8">
                 <h3 className="font-display text-3xl text-[#fffbff]">Atendimento em domicílio</h3>
                 <p className="mt-4 text-sm leading-6 text-[#cbc6bc]">
                   Ainda não há estúdio fixo. As sessões acontecem em residência, em Belém,
@@ -210,7 +210,7 @@ export function DesktopSite() {
         </section>
       </main>
 
-      <footer className="relative z-10 bg-[#0d0f0e] px-5 pt-14 pb-24 lg:px-10 lg:pb-14">
+      <footer className="relative z-10 bg-black px-5 pt-14 pb-24 lg:px-10 lg:pb-14">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:justify-between">
           <div>
             <p className="font-display text-2xl text-[#fffbff]">{site.name}</p>

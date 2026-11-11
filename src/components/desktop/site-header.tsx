@@ -95,7 +95,7 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5dfd5]/10 bg-[#121413]/85 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#e5dfd5]/10 bg-[#050505]/85 backdrop-blur-xl">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10">
         <a href="#inicio" className="flex min-w-0 items-center gap-3" onClick={(event) => goTo(event, "#inicio")}>
           <Image
@@ -158,7 +158,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <nav id="menu-site" aria-label="Seções" className="border-t border-[#e5dfd5]/10 bg-[#121413] px-5 pt-4 pb-24 xl:hidden">
+        <nav id="menu-site" aria-label="Seções" className="border-t border-[#e5dfd5]/10 bg-[#050505] px-5 pt-4 pb-24 xl:hidden">
           {links.map((link) => {
             const selected = active === link.href.slice(1);
             return (
