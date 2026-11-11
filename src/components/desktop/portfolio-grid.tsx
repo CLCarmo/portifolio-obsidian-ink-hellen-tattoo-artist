@@ -75,7 +75,7 @@ export function PortfolioGrid() {
               className={`min-h-11 rounded-full px-4 py-2 text-[13px] ${
                 filter === item.id
                   ? "bg-[#e5dfd5] text-[#33302a]"
-                  : "bg-[#282a29] text-[#e2e3e0]"
+                  : "bg-[#181818] text-[#e2e3e0]"
               }`}
             >
               {item.label}
@@ -88,7 +88,7 @@ export function PortfolioGrid() {
         {visible.map((work) => (
           <figure
             key={work.title}
-            className="relative overflow-hidden rounded-2xl bg-[#1a1c1b]"
+            className="relative overflow-hidden rounded-2xl bg-[#0c0c0c]"
           >
             <div className="relative aspect-[3/4]">
               {work.image ? (
@@ -103,7 +103,7 @@ export function PortfolioGrid() {
                 <GalleryArt id={work.art} />
               ) : null}
             </div>
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0d0f0e] via-[#0d0f0e]/80 to-transparent p-4">
+            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black via-black/80 to-transparent p-4">
               <span className="font-display block text-lg text-[#fffbff]">{work.title}</span>
               <span className="text-xs text-[#b7ccbc]">{work.detail}</span>
             </figcaption>

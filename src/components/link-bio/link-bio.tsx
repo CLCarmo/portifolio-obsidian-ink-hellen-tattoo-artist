@@ -15,7 +15,7 @@ import { Petals } from "./petals";
 function Portrait() {
   return (
     <div className="enter mx-auto mt-8 w-[15.5rem] lg:mt-2 lg:w-full lg:max-w-[20rem]" style={{ animationDelay: "70ms" }}>
-      <div className="relative mx-auto aspect-[4/5] w-[13.25rem] overflow-hidden rounded-t-[999px] rounded-b-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_50%_28%,#3a3834,#171816_68%)] shadow-[0_24px_50px_rgba(0,0,0,0.35)] lg:w-[17rem]">
+      <div className="relative mx-auto aspect-[4/5] w-[13.25rem] overflow-hidden rounded-t-[999px] rounded-b-[1.4rem] border border-white/15 bg-[radial-gradient(circle_at_50%_28%,#1c1c1c,#000000_68%)] shadow-[0_24px_50px_rgba(0,0,0,0.35)] lg:w-[17rem]">
         <div className="flex h-full flex-col items-center justify-end px-6 pb-8 text-center">
           <p className="font-display text-6xl leading-none font-medium italic text-[#f6f1e7]">
             {site.artist.slice(0, 1)}
@@ -46,7 +46,7 @@ function GalleryCard({
 
   return (
     <figure
-      className={`enter-view overflow-hidden rounded-[1.35rem] border ${logo ? "border-[#f5f5f5] bg-[#f5f5f5]" : "border-white/12 bg-[#141513]"}`}
+      className={`enter-view overflow-hidden rounded-[1.35rem] border ${logo ? "border-[#f5f5f5] bg-[#f5f5f5]" : "border-white/12 bg-[#0c0c0c]"}`}
     >
       <div className={`relative aspect-[3/4] ${logo ? "bg-[#f5f5f5]" : ""}`}>
         {image ? (
@@ -129,7 +129,7 @@ export function LinkBio() {
         {site.offer.visible ? (
           <p
             role="note"
-            className="enter-view mt-4 flex items-start gap-3 rounded-[1.6rem] border border-white/12 bg-[#1a2420]/80 px-4 py-3"
+            className="enter-view mt-4 flex items-start gap-3 rounded-[1.6rem] border border-white/12 bg-[#121212]/80 px-4 py-3"
           >
             <TagIcon className="mt-0.5 size-5 shrink-0 text-[#d7d1c4]" />
             <span>

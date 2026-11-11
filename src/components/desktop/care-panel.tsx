@@ -70,8 +70,8 @@ export function CarePanel() {
   return (
     <section id="cuidados" className="mx-auto w-full max-w-7xl px-5 py-20 lg:px-10">
       <div className="lg:grid lg:grid-cols-12 lg:gap-6">
-        <div className="rounded-2xl border border-[#2b302c] bg-[#141715]/90 p-5 sm:p-7 lg:contents">
-          <div className="lg:col-span-4 lg:flex lg:flex-col lg:justify-between lg:rounded-2xl lg:border lg:border-[#2b302c] lg:bg-[#141715]/90 lg:p-7">
+        <div className="rounded-2xl border border-[#242424] bg-[#080808]/90 p-5 sm:p-7 lg:contents">
+          <div className="lg:col-span-4 lg:flex lg:flex-col lg:justify-between lg:rounded-2xl lg:border lg:border-[#242424] lg:bg-[#080808]/90 lg:p-7">
             <div>
               <h2 className="font-display text-[1.75rem] text-[#f5f2eb]">Cuidados</h2>
               <p className="mt-1 text-sm text-[#cbc6bc]">Pré e pós tatuagem</p>
@@ -140,7 +140,7 @@ export function CarePanel() {
           <div
             aria-live="polite"
             role="tabpanel"
-            className="mt-6 lg:col-span-8 lg:mt-0 lg:flex lg:min-h-[420px] lg:flex-col lg:justify-center lg:rounded-2xl lg:border lg:border-[#2b302c] lg:bg-[#141715] lg:p-12"
+            className="mt-6 lg:col-span-8 lg:mt-0 lg:flex lg:min-h-[420px] lg:flex-col lg:justify-center lg:rounded-2xl lg:border lg:border-[#242424] lg:bg-[#080808] lg:p-12"
           >
             <div className="mb-4 flex gap-2">
               <button

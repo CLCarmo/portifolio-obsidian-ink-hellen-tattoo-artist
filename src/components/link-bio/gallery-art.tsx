@@ -65,7 +65,7 @@ const arts: Record<GalleryId, () => JSX.Element> = {
 export function GalleryArt({ id }: { id: GalleryId }) {
   const Art = arts[id];
   return (
-    <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_50%_40%,#2a2926,#141513_72%)] p-4">
+    <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_50%_40%,#1a1a1a,#000000_72%)] p-4">
       <Art />
     </div>
   );
