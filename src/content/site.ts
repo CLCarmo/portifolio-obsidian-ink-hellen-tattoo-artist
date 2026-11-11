@@ -24,7 +24,7 @@ export const site = {
   links: {
     instagram: {
       label: "Falar no Instagram",
-      href: "https://ig.me/m/elli_crisx",
+      href: "https://www.instagram.com/obsidiantattooink/",
     },
     whatsapp: {
       label: "Falar no WhatsApp",

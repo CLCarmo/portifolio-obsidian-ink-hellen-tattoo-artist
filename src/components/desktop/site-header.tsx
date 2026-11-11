@@ -33,7 +33,6 @@ const links = [
   { href: "#cuidados", label: "Cuidados" },
   { href: "#portfolio", label: "Portfólio" },
   { href: "#biosseguranca", label: "Biossegurança" },
-  { href: "#depoimentos", label: "Depoimentos" },
   { href: "#orcamento", label: "Contato" },
 ];
 

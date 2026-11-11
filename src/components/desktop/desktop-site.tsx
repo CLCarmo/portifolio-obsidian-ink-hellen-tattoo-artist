@@ -165,24 +165,6 @@ export function DesktopSite() {
           </div>
         </section>
 
-        <section id="depoimentos" className="mx-auto max-w-7xl px-5 py-20 lg:px-10">
-          <p className="text-xs tracking-[0.22em] text-[#b7ccbc] uppercase">
-            Reconhecimento
-          </p>
-          <h2 className="font-display mt-2 text-3xl text-[#fffbff] sm:text-4xl">A voz de quem confia</h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
-            {[
-              "A mão da Hellen é leve. O traço ficou fino, do jeito que eu imaginei.",
-              "O atendimento em casa foi calmo, organizado e tudo foi aberto na minha frente.",
-              "O desenho chegou antes da sessão. Ajustamos juntos e a arte ficou exclusiva.",
-            ].map((quote) => (
-              <blockquote key={quote} className="rounded-2xl bg-[#1e201f] p-8 text-sm leading-7 text-[#cbc6bc] italic">
-                “{quote}”
-              </blockquote>
-            ))}
-          </div>
-        </section>
-
         <section id="orcamento" className="bg-[#0d0f0e] px-5 py-20 lg:px-10">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-12">
             <div className="rounded-3xl bg-[#1e201f] p-8 lg:col-span-7 lg:p-12">
@@ -219,7 +201,7 @@ export function DesktopSite() {
                   rel="noopener noreferrer"
                   className="mt-3 flex items-center justify-center rounded-full border border-[#e5dfd5]/15 py-3 text-sm"
                 >
-                  Falar no Instagram • @elli_crisx
+                  Falar no Instagram • @obsidiantattooink
                   <span className="sr-only"> (abre em nova aba)</span>
                 </a>
               </div>
